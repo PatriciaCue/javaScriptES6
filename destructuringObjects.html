@@ -1,0 +1,53 @@
+<html>
+  <body>
+    <script>
+
+      const ages=[23,,65,34,78,12,3,56,87,90,43,21];
+      //Guardamos en old los menores de 50
+      const old = ages.filter(age => age<=50);
+      console.log(old);
+
+      //Deconstruccion de Objetos
+      const person={
+        first:'Lucia',
+        last:'Lopez',
+        country:'España',
+        city:'Madrid',
+        twitter:'@lulo'
+      };
+
+      //Es lo mismo que poner: 
+      //const first = person.first;
+      //const last = person.last;
+      const { first, last } = person;
+
+      const Lucia={
+        first:'Lucia',
+        last:'Lopez',
+        country:'España',
+        city:'Madrid',
+        links:{
+          twitter:'@lulo',
+          facebook:'@facebookluu'
+        },
+        web:{
+          blog:'https://weblu.com'
+        }
+      };
+
+      //const twitter = Lucia.links.twitter;
+      //const facebook = Lucia.links.facebook;
+      const{ twitter, facebook }= Lucia.links;
+      //Si quiero renombrar las variables que estoy cogiendo...
+      const{ twitter:tweet, facebook:fb }= Lucia.links;
+
+      var settings = {width: 300, color:'black'} 
+      // width va a valer 300 y el color black, el resto con los valores q definimos por defecto en la deconstruccion
+      const {width=100, height=100, color='blue', fontsize=25} =settings; 
+      //Object destructuring with variable renaming & default values
+      const { w: width2 = 400, h:height2 = 500} ={w:800};
+      //Console Output: width2=800 heigth2=500
+
+    </script>
+  </body>
+</html>
