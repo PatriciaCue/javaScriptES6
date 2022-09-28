@@ -1,0 +1,53 @@
+<html>
+  <body>
+    <script>
+
+      //Destructugin Arrays
+      const details=['Paloma',65,'paloma@gmail.com',150];
+      //const name= details[0];
+      //const age= details[1];
+      const [name, age, web, id]=details;
+      console.log(name,age,web,id);
+      //Console Output: Paloma 65 paloma@gmail.com 150
+      const data= 'Futbol, Sports, 92010,23';
+      const [itemName, category, sku, inventory] = data.split(',');
+      console.log(itemName, category, sku, inventory);
+      //Console Output: Futbol Sports 92010 23
+
+      const team = ['Paloma','Julia','Sara','Lara','Argi'];
+      const [captain, assistant, players] = team;
+      //Console Output: captain Paloma assistant Julia Players Sara
+      const [captain2, assistant2, ...players2] = team;
+      //Console Output: captain2 Paloma assistant2 Julia Players2 ["Sara","Lara","Argi"]
+    
+
+      let inRing='Hulk Hogan';
+      let onSide='The Rock';
+      //Si queremos cambiar el valor de inRing onSide tenemos que usar
+      // una variable temporal, no seria necesario si hacemos una desestructuracion
+      console.log(inRing,onSide); //Console Output: Hulk Hogan The Rock
+      [inRing, onSide] = [onSide,inRing];
+      console.log(inRing,onSide); //Console Output: The Rock Hulk Hogan
+
+      ///////////////DESTRUCTURING FUNCTIONS//////////////
+      function convertCurrency(amount) {
+        const converted={
+          USD: amount * 0.76,
+          GPB: amount * 0.53,
+          AUD: amount * 1.01,
+          MEX: amount * 13.30
+        };
+        return converted;
+      }
+
+      const hundo = convertCurrency(100);
+      console.log(hundo); //Console Output: Veo el objeto entero
+      console.log(hundo.AUD); //Console Output: 101
+      //Para poder imprimir todos los valores
+
+      const{ USD, GPB , AUD, MEX } = convertCurrency(100);
+      console.log(USD, GPB, AUD, MEX); //Console Output: 76, 53, 101, 1330
+
+    </script>
+  </body>
+</html>
