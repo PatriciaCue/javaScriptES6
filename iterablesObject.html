@@ -1,0 +1,47 @@
+<html>
+  <body>
+    <script>
+
+      const fruits=['apple','banana','watermelon','pineapple'];
+
+      for (let i = 0; i < fruits.length; i++) {
+        console.log(fruits[i]);
+      }
+
+      fruits.forEach(e => {
+        console.log(e);
+      });
+
+      for (const fruit of fruits.entries()){
+        console.log(fruit); //Console Output:[0,"apple"] [1,"banana"] [2,"watermelon"]
+        //me devuelve la posicion y el valor al utilizar fruits.entries() 
+      }
+      
+      for (const [i,fruit] of fruits.entries()){
+        console.log(`${fruit} is the ${i+1} item}`); //Console Output: apple is the 1 item...
+      }
+
+      //Objetc keys
+
+      const lucia ={
+        edad: 25,
+        nombre: 'Lucia',
+        email: 'lucia@gmail.com'
+      };
+
+      for (const prop of Object.keys(lucia)) {
+        const value = lucia[prop];
+        console.log(value,prop);
+        //Console Output: 25 "edad" Lucia nombre ...
+      }
+
+      //Es lo mismo que cambiar of por in
+      for (const prop in lucia) {
+        const value = lucia[prop];
+        console.log(value,prop);
+        //Console Output: 25 "edad" Lucia nombre ...
+      }
+
+    </script>
+  </body>
+</html>
